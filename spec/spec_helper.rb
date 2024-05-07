@@ -102,4 +102,5 @@ RSpec.configure do |config|
   require "commands/place"
   require "commands/rotate"
   require "commands/move"
+  require "commands/parse_input"
 end

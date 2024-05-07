@@ -5,7 +5,7 @@ RSpec.describe Move do
   describe ".call" do
     context "when robot is not on table" do
       it "does nothing" do
-        described_class.call(table, robot)
+        described_class.call(robot, table)
 
         expect(robot.x_position).to be_nil
         expect(robot.y_position).to be_nil
@@ -18,7 +18,7 @@ RSpec.describe Move do
           robot.set_position!(1, 4)
           robot.set_direction!("NORTH")
 
-          described_class.call(table, robot)
+          described_class.call(robot, table)
 
           expect(robot.x_position).to eq 1
           expect(robot.y_position).to eq 4
@@ -28,7 +28,7 @@ RSpec.describe Move do
           robot.set_position!(4, 1)
           robot.set_direction!("EAST")
 
-          described_class.call(table, robot)
+          described_class.call(robot, table)
 
           expect(robot.x_position).to eq 4
           expect(robot.y_position).to eq 1
@@ -38,7 +38,7 @@ RSpec.describe Move do
           robot.set_position!(1, 0)
           robot.set_direction!("SOUTH")
 
-          described_class.call(table, robot)
+          described_class.call(robot, table)
 
           expect(robot.x_position).to eq 1
           expect(robot.y_position).to eq 0
@@ -48,7 +48,7 @@ RSpec.describe Move do
           robot.set_position!(0, 1)
           robot.set_direction!("WEST")
 
-          described_class.call(table, robot)
+          described_class.call(robot, table)
 
           expect(robot.x_position).to eq 0
           expect(robot.y_position).to eq 1
@@ -60,7 +60,7 @@ RSpec.describe Move do
           robot.set_position!(0, 1)
           robot.set_direction!("NORTH")
 
-          described_class.call(table, robot)
+          described_class.call(robot, table)
 
           expect(robot.x_position).to eq 0
           expect(robot.y_position).to eq 2
@@ -70,7 +70,7 @@ RSpec.describe Move do
           robot.set_position!(1, 0)
           robot.set_direction!("EAST")
 
-          described_class.call(table, robot)
+          described_class.call(robot, table)
 
           expect(robot.x_position).to eq 2
           expect(robot.y_position).to eq 0
@@ -80,7 +80,7 @@ RSpec.describe Move do
           robot.set_position!(0, 1)
           robot.set_direction!("SOUTH")
 
-          described_class.call(table, robot)
+          described_class.call(robot, table)
 
           expect(robot.x_position).to eq 0
           expect(robot.y_position).to eq 0
@@ -90,7 +90,7 @@ RSpec.describe Move do
           robot.set_position!(1, 1)
           robot.set_direction!("WEST")
 
-          described_class.call(table, robot)
+          described_class.call(robot, table)
 
           expect(robot.x_position).to eq 0
           expect(robot.y_position).to eq 1

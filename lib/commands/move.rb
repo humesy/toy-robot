@@ -3,9 +3,9 @@ class Move
     new(...).call
   end
 
-  def initialize(table, robot)
-    @table = table
+  def initialize(robot, table)
     @robot = robot
+    @table = table
   end
 
   def call
