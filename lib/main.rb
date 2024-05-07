@@ -16,6 +16,7 @@ class Main
       Place.call(table, robot, *args)
     when "MOVE"
     when "LEFT", "RIGHT"
+      Rotate.call(robot, command)
     when "REPORT"
       Report.call(robot)
     else
