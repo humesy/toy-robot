@@ -4,8 +4,6 @@ require "commands/rotate"
 require "commands/move"
 
 class ParseInput
-  VALID_ROTATION = %w[LEFT RIGHT].freeze
-
   def self.call(...)
     new(...).call
   end

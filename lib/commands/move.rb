@@ -30,7 +30,7 @@ class Move
       position[:x] += 1
     when "SOUTH"
       position[:y] -= 1
-    when "WEST"
+    else
       position[:x] -= 1
     end
 

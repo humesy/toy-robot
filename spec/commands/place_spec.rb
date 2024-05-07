@@ -4,7 +4,7 @@ RSpec.describe Place do
 
   describe ".call" do
     context "when placement is invalid" do
-      it "does not update position of the robot" do
+      it "does not place robot on table" do
         described_class.call(robot, table, -1, 2, 'WEST')
 
         expect(robot.x_position).to be_nil
@@ -14,7 +14,7 @@ RSpec.describe Place do
     end
 
     context "when placement is valid" do
-      it "updates position of robot" do
+      it "places robot on table" do
         described_class.call(robot, table, 1, 2, 'WEST')
 
         expect(robot.x_position).to eq 1
