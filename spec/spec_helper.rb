@@ -98,4 +98,5 @@ RSpec.configure do |config|
 
   require "robot"
   require "table"
+  require "commands/report"
 end

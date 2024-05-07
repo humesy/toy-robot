@@ -1,6 +1,7 @@
 $LOAD_PATH << "./lib"
 require "robot"
 require "table"
+require "commands/report"
 
 class Main
   robot = Robot.new
@@ -13,6 +14,7 @@ class Main
     when "MOVE"
     when "LEFT", "RIGHT"
     when "REPORT"
+      Report.call(robot)
     else
       puts "invalid"
     end
