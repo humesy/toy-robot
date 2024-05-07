@@ -101,4 +101,5 @@ RSpec.configure do |config|
   require "commands/report"
   require "commands/place"
   require "commands/rotate"
+  require "commands/move"
 end

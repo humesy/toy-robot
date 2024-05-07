@@ -3,6 +3,8 @@ require "robot"
 require "table"
 require "commands/place"
 require "commands/report"
+require "commands/rotate"
+require "commands/move"
 
 class Main
   robot = Robot.new
@@ -15,6 +17,7 @@ class Main
       args = command.split(" ")[1].split(",")
       Place.call(table, robot, *args)
     when "MOVE"
+      Move.call(table, robot)
     when "LEFT", "RIGHT"
       Rotate.call(robot, command)
     when "REPORT"
