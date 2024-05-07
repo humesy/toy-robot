@@ -20,9 +20,12 @@ class Rotate
   private
 
   def target_direction
-    directions = Table::DIRECTIONS.dup
-    directions.reverse! if @rotation == "RIGHT"
-    current_index = directions.index(@robot.direction)
-    directions[current_index -1]
+    directions = Table::DIRECTIONS.dup * 2
+    new_index = directions.index(@robot.direction) + direction_shift
+    directions[new_index]
+  end
+
+  def direction_shift
+    @rotation == "LEFT" ? -1 : 1
   end
 end

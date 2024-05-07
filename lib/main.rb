@@ -1,10 +1,6 @@
 $LOAD_PATH << "./lib"
 require "robot"
 require "table"
-require "commands/place"
-require "commands/report"
-require "commands/rotate"
-require "commands/move"
 require "commands/parse_input"
 
 class Main

@@ -3,9 +3,9 @@ class Place
     new(...).call
   end
 
-  def initialize(table, robot, x_position, y_position, direction)
-    @table = table
+  def initialize(robot, table, x_position, y_position, direction)
     @robot = robot
+    @table = table
     @x_position = x_position.to_i
     @y_position = y_position.to_i
     @direction = direction

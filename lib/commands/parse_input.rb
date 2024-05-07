@@ -1,3 +1,8 @@
+require "commands/place"
+require "commands/report"
+require "commands/rotate"
+require "commands/move"
+
 class ParseInput
   VALID_ROTATION = %w[LEFT RIGHT].freeze
 
