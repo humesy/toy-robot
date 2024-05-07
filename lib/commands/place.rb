@@ -12,8 +12,10 @@ class Place
   end
 
   def call
-    return unless @table.valid_position?(@x_position, @y_position, @direction)
+    return unless @table.valid_position?(@x_position, @y_position)
+    return unless @table.valid_direction?(@direction)
 
-    @robot.set_position!(@x_position, @y_position, @direction)
+    @robot.set_position!(@x_position, @y_position)
+    @robot.set_direction!(@direction)
   end
 end

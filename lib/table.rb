@@ -10,8 +10,12 @@ class Table
     @width = WIDTH
   end
 
-  def valid_position?(x, y, direction)
-    valid_x?(x) && valid_y?(y) && valid_direction?(direction)
+  def valid_position?(x, y)
+    valid_x?(x) && valid_y?(y)
+  end
+
+  def valid_direction?(direction)
+    DIRECTIONS.include?(direction)
   end
 
   private
@@ -22,9 +26,5 @@ class Table
 
   def valid_y?(y)
     (0..@height-1).include?(y)
-  end
-
-  def valid_direction?(direction)
-    DIRECTIONS.include?(direction)
   end
 end

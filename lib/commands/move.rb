@@ -10,10 +10,9 @@ class Move
 
   def call
     return unless @robot.on_table?
-    new_position = target_position + [@robot.direction]
-    return unless @table.valid_position?(*new_position)
+    return unless @table.valid_position?(*target_position)
 
-    @robot.set_position!(*new_position)
+    @robot.set_position!(*target_position)
   end
 
   private
@@ -35,6 +34,6 @@ class Move
       position[:x] -= 1
     end
 
-    position.values
+    @target_position ||= position.values
   end
 end

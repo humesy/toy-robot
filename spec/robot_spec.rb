@@ -11,10 +11,17 @@ RSpec.describe Robot do
 
   describe "#set_position!" do
     it "sets position values" do
-      robot.set_position!(1, 2, 'NORTH')
+      robot.set_position!(1, 2)
 
       expect(robot.x_position).to eq 1
       expect(robot.y_position).to eq 2
+    end
+  end
+
+  describe "#set_direction!" do
+    it "sets direction value" do
+      robot.set_direction!('NORTH')
+
       expect(robot.direction).to eq 'NORTH'
     end
   end
@@ -26,9 +33,10 @@ RSpec.describe Robot do
       end
     end
 
-    context "when robot has position values" do
+    context "when robot has position and direction values" do
       it "returns true" do
-        robot.set_position!(1, 2, 'NORTH')
+        robot.set_position!(1, 2)
+        robot.set_direction!('NORTH')
 
         expect(robot.on_table?).to be_truthy
       end

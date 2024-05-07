@@ -11,7 +11,10 @@ RSpec.describe Report do
     end
 
     context "when robot is on table" do
-      before { robot.set_position!(1, 2, 'NORTH') }
+      before do
+        robot.set_position!(1, 2)
+        robot.set_direction!('NORTH')
+      end
 
       it "outputs current position of robot" do
         expect(STDOUT).to receive(:puts).with("1,2,NORTH")

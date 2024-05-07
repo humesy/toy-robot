@@ -11,9 +11,11 @@ RSpec.describe Rotate do
     end
 
     context "when robot is on table" do
+      before { robot.set_position!(1, 2) }
+
       context "with invalid direction" do
         it "does not rotate the robot" do
-          robot.set_position!(1, 2, "EAST")
+          robot.set_direction!("EAST")
 
           described_class.call(robot, "BAD_DIRECTION")
 
@@ -23,7 +25,7 @@ RSpec.describe Rotate do
 
       context "with RIGHT direction" do
         it "rotates the robot NORTH to EAST" do
-          robot.set_position!(1, 2, "NORTH")
+          robot.set_direction!("NORTH")
 
           described_class.call(robot, "RIGHT")
 
@@ -31,7 +33,7 @@ RSpec.describe Rotate do
         end
 
         it "rotates the robot EAST to SOUTH" do
-          robot.set_position!(1, 2, "EAST")
+          robot.set_direction!("EAST")
 
           described_class.call(robot, "RIGHT")
 
@@ -39,7 +41,7 @@ RSpec.describe Rotate do
         end
 
         it "rotates the robot SOUTH to WEST" do
-          robot.set_position!(1, 2, "SOUTH")
+          robot.set_direction!("SOUTH")
 
           described_class.call(robot, "RIGHT")
 
@@ -47,7 +49,7 @@ RSpec.describe Rotate do
         end
 
         it "rotates the robot WEST to NORTH" do
-          robot.set_position!(1, 2, "WEST")
+          robot.set_direction!("WEST")
 
           described_class.call(robot, "RIGHT")
 
@@ -57,7 +59,7 @@ RSpec.describe Rotate do
 
       context "with LEFT direction" do
         it "rotates the robot NORTH to WEST" do
-          robot.set_position!(1, 2, "NORTH")
+          robot.set_direction!("NORTH")
 
           described_class.call(robot, "LEFT")
 
@@ -65,7 +67,7 @@ RSpec.describe Rotate do
         end
 
         it "rotates the robot EAST to NORTH" do
-          robot.set_position!(1, 2, "EAST")
+          robot.set_direction!("EAST")
 
           described_class.call(robot, "LEFT")
 
@@ -73,7 +75,7 @@ RSpec.describe Rotate do
         end
 
         it "rotates the robot SOUTH to EAST" do
-          robot.set_position!(1, 2, "SOUTH")
+          robot.set_direction!("SOUTH")
 
           described_class.call(robot, "LEFT")
 
@@ -81,7 +83,7 @@ RSpec.describe Rotate do
         end
 
         it "rotates the robot WEST to SOUTH" do
-          robot.set_position!(1, 2, "WEST")
+          robot.set_direction!("WEST")
 
           described_class.call(robot, "LEFT")
 

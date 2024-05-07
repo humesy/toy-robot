@@ -7,9 +7,12 @@ class Robot
     @direction = nil
   end
 
-  def set_position!(new_x, new_y, new_direction)
+  def set_position!(new_x, new_y)
     @x_position = new_x
     @y_position = new_y
+  end
+
+  def set_direction!(new_direction)
     @direction = new_direction
   end
 
