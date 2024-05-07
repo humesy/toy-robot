@@ -1,6 +1,7 @@
 $LOAD_PATH << "./lib"
 require "robot"
 require "table"
+require "commands/place"
 require "commands/report"
 
 class Main
@@ -11,6 +12,8 @@ class Main
     command = gets.chomp
     case command
     when /^PLACE/
+      args = command.split(" ")[1].split(",")
+      Place.call(table, robot, *args)
     when "MOVE"
     when "LEFT", "RIGHT"
     when "REPORT"
