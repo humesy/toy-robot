@@ -1,3 +1,9 @@
+##
+# Object representing the table the toy robot is placed on
+#
+# Validates if a position or direction is within the confines
+# of the table
+
 class Table
   HEIGHT = 5.freeze
   WIDTH = 5.freeze

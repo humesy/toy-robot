@@ -3,6 +3,17 @@ require "commands/report"
 require "commands/rotate"
 require "commands/move"
 
+##
+# Calls the relevant command to process a given user input
+#
+# If the input is not a valid command, returns without any action
+#
+# ==== Attributes
+#
+# * +input+ - The input provided by the user
+# * +robot+ - The robot object being affected
+# * +table+ - The table object that the robot is/will be on
+
 class ParseInput
   def self.call(...)
     new(...).call

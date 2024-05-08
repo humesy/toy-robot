@@ -1,3 +1,12 @@
+##
+# Logs the current position and direction of the robot to standard output
+#
+# If the robot is not on the table, does not output anything
+#
+# ==== Attributes
+#
+# * +robot+ - The robot object to report position and direction of
+
 class Report
   def self.call(...)
     new(...).call

@@ -1,3 +1,8 @@
+##
+# Object representing the toy robot
+#
+# Tracks its current position and direction
+
 class Robot
   attr_accessor :x_position, :y_position, :direction
 

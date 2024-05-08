@@ -1,3 +1,14 @@
+##
+# Moves the robot 1 unit in the direction it is currently facing
+#
+# If the robot is not on the table or the move would take it off the
+# table, does not attempt to move the robot
+#
+# ==== Attributes
+#
+# * +robot+ - The robot object that is being moved
+# * +table+ - The table object that the robot is being moved on
+
 class Move
   def self.call(...)
     new(...).call

@@ -1,3 +1,14 @@
+##
+# Rotates the direction the robot is facing left or right
+#
+# If the robot is not on the table or an invalid rotation direction
+# is provided, does not attempt to rotate the robot
+#
+# ==== Attributes
+#
+# * +robot+ - The robot object that is being rotated
+# * +rotation+ - The direction to rotate the robot
+
 class Rotate
   VALID_ROTATION = %w[LEFT RIGHT].freeze
 
