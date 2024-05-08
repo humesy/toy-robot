@@ -7,7 +7,7 @@ Run the following commands in your terminal
 
 Clone the repository
 ```shell
-git clone 
+git clone https://github.com/humesy/toy-robot.git
 cd toy-robot
 ```
 Ensure ruby version 3.3.1 is being used. If it is not, install it via your preferred version manager
@@ -34,6 +34,7 @@ Once running, you can input commands and submit by pressing enter. Valid command
 3. LEFT - rotates the direction the robot is facing left
 4. RIGHT - rotates the direction the robot is facing right
 5. REPORT - outputs the current position and direction of the robot
+6. EXIT - stops the simulation
 
 ### Constraints
 * All inputs will be ignored until a valid PLACE command has been called
@@ -42,3 +43,13 @@ Once running, you can input commands and submit by pressing enter. Valid command
 * Any input that would cause the robot to leave the boundaries of the table is ignored
 * Inputs are case sensitive
 * Any invalid input that does not match the above formats is ignored
+
+
+## Testing
+
+Software tests can be run via
+```shell
+rspec
+```
+
+Example test input and output cases are provided in test_data.txt

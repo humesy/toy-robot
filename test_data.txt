@@ -1,0 +1,139 @@
+Test input/output sequences. - denotes input, * denotes expected output (lack of means no output expected)
+
+Example 1 - Places robot on table
+---------------------------------
+- PLACE 3,3,WEST
+- REPORT
+* 3,3,WEST
+- PLACE 1,4,NORTH
+- REPORT
+* 1,4,NORTH
+
+
+
+Example 2 - Does not place robot on table with invalid args
+-----------------------------------------------------------
+- PLACE -1,3,WEST
+- REPORT
+- PLACE 1,900,WEST
+- REPORT
+- PLACE 1,3,DOWN
+- REPORT
+
+
+
+Example 3 - Rotates robot left
+------------------------------
+- PLACE 1,1,NORTH
+- LEFT
+- REPORT
+* 1,1,WEST
+- LEFT
+- REPORT
+# 1,1,SOUTH
+- LEFT
+- REPORT
+# 1,1,EAST
+- LEFT
+- REPORT
+* 1,1,NORTH
+
+
+
+Example 4 - Rotates robot right
+-------------------------------
+- PLACE 1,1,NORTH
+- RIGHT
+- REPORT
+* 1,1,EAST
+- RIGHT
+- REPORT
+# 1,1,SOUTH
+- RIGHT
+- REPORT
+# 1,1,WEST
+- RIGHT
+- REPORT
+* 1,1,NORTH
+
+
+
+Example 5 - moves robot in current direction
+--------------------------------------------
+- PLACE 1,1,NORTH
+- MOVE
+- REPORT
+* 1,2,NORTH
+- LEFT
+- MOVE
+- REPORT
+* 0,2,WEST
+- LEFT
+- MOVE
+- REPORT
+* 0,1,SOUTH
+- LEFT
+- MOVE
+- REPORT
+* 1,1,EAST
+
+
+
+Example 6 - multiple movements
+------------------------------
+- PLACE 1,1,NORTH
+- MOVE
+- MOVE
+- MOVE
+- RIGHT
+- MOVE
+- MOVE
+- RIGHT
+- MOVE
+- REPORT
+* 3,3,SOUTH
+
+
+
+
+Example 7 - robot cannot move off table
+---------------------------------------
+- PLACE 1,4,NORTH
+- MOVE
+- REPORT
+* 1,4,NORTH
+- PLACE 4,1,EAST
+- MOVE
+- REPORT
+* 4,1,EAST
+- PLACE 1,0,SOUTH
+- MOVE
+- REPORT
+* 1,0,SOUTH
+- PLACE 0,1,WEST
+- MOVE
+- REPORT
+* 0,1,WEST
+
+
+
+
+Example 8 - ignores input when robot not placed
+-----------------------------------------------
+- MOVE
+- REPORT
+- LEFT
+- REPORT
+- RIGHT
+- REPORT
+
+
+
+
+Example 9 - ignores invalid input
+---------------------------------
+- JUMP
+- DASH
+- FLY
+- SWING
+- REPORT

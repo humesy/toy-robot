@@ -29,7 +29,7 @@ class ParseInput
     case @input
     when "MOVE"
       Move.call(@robot, @table)
-    when /^PLACE/
+    when /^PLACE /
       return unless place_args.length == 3
       Place.call(@robot, @table, *place_args)
     when "REPORT"
