@@ -1,6 +1,6 @@
 $LOAD_PATH << "./lib"
-require "robot"
-require "table"
+require "models/robot"
+require "models/table"
 require "commands/parse_input"
 
 ##

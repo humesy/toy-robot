@@ -96,8 +96,8 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 
-  require "robot"
-  require "table"
+  require "models/robot"
+  require "models/table"
   require "commands/report"
   require "commands/place"
   require "commands/rotate"
